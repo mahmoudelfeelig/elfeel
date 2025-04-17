@@ -1,44 +1,117 @@
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
-export const Contact = () => (
-  <section id="contact" className="py-20 px-4 bg-dark-900">
-    <div className="container mx-auto max-w-2xl">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold mb-12 text-center text-purple-400">Get In Touch</h2>
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full bg-dark-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-100 placeholder-gray-400"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full bg-dark-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-100 placeholder-gray-400"
-          />
-          <textarea
-            placeholder="Message"
-            rows="5"
-            className="w-full bg-dark-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-100 placeholder-gray-400"
-          />
-          <button className="w-full bg-gradient-to-r from-purple-500 to-magenta-500 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-            Send Message
-          </button>
-        </form>
-        
-        <div className="mt-12 text-center space-y-2">
-          <p className="text-gray-400">Or reach me directly at:</p>
-          <div className="text-purple-400 space-x-4">
-            <a href="mailto:CrypticSploit@protonmail.com" className="hover:text-magenta-400 transition-colors">
-              CrypticSploit@protonmail.com
-            </a>
+export const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs.sendForm(
+      'service_fsuikch',
+      'template_ewge4bi',
+      form.current, // The form reference
+      'U51UwT-D0Ghjxx3jL'
+    )
+    .then(() => {
+      alert('Message successfully sent!');
+      form.current.reset();
+    }, (error) => {
+      alert(`Error sending message: ${error.text}`);
+    });
+  };
+
+  return (
+    <section id="contact" className="py-20 px-4 bg-dark-900 pt-24">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="bg-dark-800 p-12 rounded-3xl shadow-2xl border border-purple-500/20"
+        >
+          <h2 className="text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-magenta-400">
+            Get In Touch
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="bg-gradient-to-br from-purple-500/10 to-magenta-500/10 p-8 rounded-2xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <FiMail className="text-3xl text-purple-400" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-100">Email</h3>
+                    <a 
+                      href="mailto:mahmoudelfeelig@gmail.com" 
+                      className="text-gray-400 hover:text-purple-400 transition-colors"
+                    >
+                      mahmoudelfeelig@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 mb-6">
+                  <FiPhone className="text-3xl text-purple-400" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-100">Phone</h3>
+                    <p className="text-gray-400">+12345</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <FiMapPin className="text-3xl text-purple-400" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-100">Location</h3>
+                    <p className="text-gray-400">Berlin, Germany</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fun Facts Section */}
+              <div className="bg-dark-700 p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-gray-100 mb-6">Fun Facts About Me</h3>
+                <ul className="space-y-4 text-gray-400">
+                  <li>📚 In my first job I had to learn web development in a single day.</li>
+                  <li>☕ It took me almost 2 weeks to code tic</li>
+                </ul>
+              </div>
+            </div>
+
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+              <div className="bg-dark-700 p-8 rounded-2xl">
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder="Your Name"
+                  className="w-full bg-transparent border-b-2 border-purple-500/30 focus:border-purple-500 focus:outline-none py-4 text-xl text-gray-100 placeholder-gray-500"
+                  required
+                />
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="Your Email"
+                  className="w-full bg-transparent border-b-2 border-purple-500/30 focus:border-purple-500 focus:outline-none py-4 text-xl text-gray-100 placeholder-gray-500 mt-8"
+                  required
+                />
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows="6"
+                  className="w-full bg-transparent border-b-2 border-purple-500/30 focus:border-purple-500 focus:outline-none py-4 text-xl text-gray-100 placeholder-gray-500 mt-8"
+                  required
+                />
+                <button 
+                  type="submit"
+                  className="mt-12 w-full bg-gradient-to-r from-purple-500 to-magenta-500 text-white py-4 rounded-xl font-bold text-xl hover:opacity-90 transition-opacity"
+                >
+                  Send Email
+                </button>
+              </div>
+            </form>
           </div>
-        </div>
-      </motion.div>
-    </div>
-  </section>
-);
+        </motion.div>
+      </div>
+    </section>
+  );
+};

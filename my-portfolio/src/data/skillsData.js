@@ -1,39 +1,39 @@
 export const skillsData = [
     {
       id: 1,
-      title: 'Penetration Testing',
+      title: 'Web Devleopment',
       percentage: 95,
-      description: 'Web application security testing and vulnerability assessment',
+      description: 'Web applications development with a sleek design',
     },
     {
       id: 2,
-      title: 'C2 Framework Development',
-      percentage: 85,
-      description: 'Custom command and control system development',
+      title: 'iOS Development',
+      percentage: 90,
+      description: 'Custom iOS applications with a focus on user experience',
     },
     {
       id: 3,
-      title: 'Exploit Development',
-      percentage: 90,
-      description: 'Zero-day vulnerability research and exploit creation',
+      title: 'Data analysis',
+      percentage: 85,
+      description: 'Data analysis and ComputerVision using Yolo',
     },
     {
       id: 4,
-      title: 'Reverse Engineering',
-      percentage: 80,
-      description: 'Malware analysis and binary reverse engineering',
+      title: 'Game development',
+      percentage: 70,
+      description: 'Game development with Godot'
     },
     {
       id: 5,
       title: 'Network Security',
-      percentage: 88,
-      description: 'Network infrastructure penetration testing',
+      percentage: 75,
+      description: 'Network infrastructure troubleshooting and IT support',
     },
     {
       id: 6,
-      title: 'Digital Forensics',
-      percentage: 75,
-      description: 'Incident response and forensic analysis',
+      title: 'Competitve Programming',
+      percentage: 80,
+      description: 'Problem solving and algorithm design',
     },
   ];
   
