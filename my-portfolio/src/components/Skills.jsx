@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { skillsData } from '../data/skillsData';
+import PropTypes from 'prop-types';
 
 const SkillCard = ({ skill, index }) => (
   <motion.div
@@ -23,6 +24,14 @@ const SkillCard = ({ skill, index }) => (
     <p className="text-gray-300 text-sm">{skill.description}</p>
   </motion.div>
 );
+SkillCard.propTypes = {
+  skill: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export const Skills = () => (
   <section id="skills" className="py-20 px-4 bg-dark-800">

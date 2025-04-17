@@ -72,15 +72,15 @@ export const Contact = () => {
                 <h3 className="text-2xl font-semibold text-gray-100 mb-6">Tech Stack</h3>
                 <div className="grid grid-cols-3 gap-4">
                   {[
-                    { icon: '🐍', name: 'Python' },
-                    { icon: '⚛️', name: 'React' },
-                    { icon: '📱', name: 'Swift' },
-                    { icon: '🔗', name: 'Next.js' },
-                    { icon: '🤖', name: 'AI/ML' },
-                    { icon: '🎮', name: 'Godot' }
-                  ].map((tech, index) => (
+                    { id: 'python', icon: '🐍', name: 'Python' },
+                    { id: 'react', icon: '⚛️', name: 'React' },
+                    { id: 'swift', icon: '📱', name: 'Swift' },
+                    { id: 'nextjs', icon: '🔗', name: 'Next.js' },
+                    { id: 'ai_ml', icon: '🤖', name: 'AI/ML' },
+                    { id: 'godot', icon: '🎮', name: 'Godot' }
+                  ].map((tech) => (
                     <div 
-                      key={index}
+                      key={tech.id}
                       className="p-3 bg-purple-500/10 rounded-lg text-center hover:bg-purple-500/20 transition-colors"
                     >
                       <div className="text-2xl mb-1">{tech.icon}</div>

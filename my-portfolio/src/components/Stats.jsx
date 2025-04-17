@@ -12,7 +12,7 @@ export const Stats = () => (
           { number: '5+', label: 'Professional Projects' },
         ].map((stat, index) => (
           <motion.div
-            key={index}
+            key={stat.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
