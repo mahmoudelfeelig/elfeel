@@ -1,0 +1,38 @@
+{
+  "name": "elfeel",
+  "version": "1.0.0",
+  "description": "website for myself",
+  "main": "main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmoudelfeelig/elfeel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mahmoudelfeelig/elfeel/issues"
+  },
+  "homepage": "https://github.com/mahmoudelfeelig/elfeel#readme",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
+    "react-typed": "^2.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
+    "vite": "^6.3.1"
+  }
+}
