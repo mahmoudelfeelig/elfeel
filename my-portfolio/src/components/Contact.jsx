@@ -12,7 +12,7 @@ export const Contact = () => {
     emailjs.sendForm(
       'service_fsuikch',
       'template_ewge4bi',
-      form.current, // The form reference
+      form.current,
       'U51UwT-D0Ghjxx3jL'
     )
     .then(() => {
@@ -55,7 +55,7 @@ export const Contact = () => {
                   <FiPhone className="text-3xl text-purple-400" />
                   <div>
                     <h3 className="text-xl font-semibold text-gray-100">Phone</h3>
-                    <p className="text-gray-400">+12345</p>
+                    <p className="text-gray-400">+49 1523 8498263</p>
                   </div>
                 </div>
 
@@ -68,13 +68,26 @@ export const Contact = () => {
                 </div>
               </div>
 
-              {/* Fun Facts Section */}
               <div className="bg-dark-700 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-100 mb-6">Fun Facts About Me</h3>
-                <ul className="space-y-4 text-gray-400">
-                  <li>📚 In my first job I had to learn web development in a single day.</li>
-                  <li>☕ It took me almost 2 weeks to code tic</li>
-                </ul>
+                <h3 className="text-2xl font-semibold text-gray-100 mb-6">Tech Stack</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { icon: '🐍', name: 'Python' },
+                    { icon: '⚛️', name: 'React' },
+                    { icon: '📱', name: 'Swift' },
+                    { icon: '🔗', name: 'Next.js' },
+                    { icon: '🤖', name: 'AI/ML' },
+                    { icon: '🎮', name: 'Godot' }
+                  ].map((tech, index) => (
+                    <div 
+                      key={index}
+                      className="p-3 bg-purple-500/10 rounded-lg text-center hover:bg-purple-500/20 transition-colors"
+                    >
+                      <div className="text-2xl mb-1">{tech.icon}</div>
+                      <span className="text-gray-300 text-sm">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
