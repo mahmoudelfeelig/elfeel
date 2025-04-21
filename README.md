@@ -90,4 +90,4 @@ Reach out via the [Contact](https://elfeel.me#contact) form on the site or conne
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under [GPL 3.0](LICENSE).
